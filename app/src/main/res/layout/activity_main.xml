@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#008b00"
         android:id="@+id/butt"
+        android:textColor="@color/white"
         android:layout_gravity="center"
         android:text="search"
         />

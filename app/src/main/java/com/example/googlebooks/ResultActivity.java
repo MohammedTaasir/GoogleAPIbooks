@@ -34,9 +34,10 @@ public class ResultActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        TextView not = (TextView) findViewById(R.id.non);
+
+        TextView nott =  (TextView) findViewById(R.id.non);
         ListView l = (ListView) findViewById(R.id.list);
-        l.setEmptyView(not);
+        l.setEmptyView(nott);
 
         r = new resAdapter(this, new ArrayList<books>());
         l.setAdapter(r);
@@ -71,9 +72,9 @@ public class ResultActivity extends AppCompatActivity {
         // Otherwise update the TextView to tell the user there is no connection or no search term.
         else {
             if (ch.length() == 0) {
-                not.setText("enter name of the book");
+                nott.setText("ENTER NAME OF THE BOOK");
             } else {
-                not.setText("no network");
+                nott.setText("NO NETWORK");
             }
         }
 
@@ -85,7 +86,7 @@ public class ResultActivity extends AppCompatActivity {
 
 
 
-        /** private TextView t;
+        /* private TextView t;
         private TextView a;
         private EditText s;
 
@@ -93,7 +94,7 @@ public class ResultActivity extends AppCompatActivity {
             t = text;
             a = auth;
             s = search;
-        }**/
+        }*/
         @Override
         protected List<books> doInBackground(String... strings) {
             if(strings[0]==null){
@@ -105,10 +106,13 @@ public class ResultActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<books> g) {
+            TextView tt = (TextView) findViewById(R.id.non);
+            tt.setText("NO RESULTS FOUND");
             r.clear();
             if(g != null){
                 r.addAll(g);
             }
+
         }
     }
 
